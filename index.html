@@ -86,11 +86,24 @@
             .hero-text-background {
                 padding: 15px !important; /* Adjust padding for smaller screens */
             }
+
+            /* On mobile, remove min-height from cards for natural stacking */
+            .card-content-feature-1, .card-content-feature-2 {
+                min-height: auto !important;
+            }
         }
     </style>
     <!--[if mso]>
     <style type="text/css">
         .main-table { width: 650px !important; }
+        /* MSO specific min-height for feature cards to ensure equal height on desktop */
+        .card-content-feature-1 { min-height: 220px !important; } /* For the 4 cards in the "2025 a été une année structurante" section */
+        .card-content-feature-2 { min-height: 250px !important; } /* For the 6 cards in the "Prêts à vendre plus vite ?" section */
+
+        /* Ensure MSO inner cells stretch to full height */
+        .mso-full-height-td { height:100% !important; }
+        .mso-full-height-div { height:100% !important; }
+        
         /* Mobile-specific adjustments (.mobile-full-width, .min-height-adjust) are handled by media queries for responsive clients.
            MSO desktop clients will ignore media queries and typically render based on default inline styles or fixed widths. */
     </style>
@@ -153,9 +166,9 @@
                                         <!--[if mso]>
                                         <table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
                                             <tr>
-                                                <td valign="top" height="100%">
+                                                <td valign="top" class="mso-full-height-td">
                                         <![endif]-->
-                                        <div style="background:linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);padding:25px 20px;border-radius:16px;border-top:4px solid #84C9BD;box-shadow:0 4px 12px rgba(26, 52, 49, 0.1);height:100%;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+                                        <div class="card-content-feature-1" style="background:linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);padding:25px 20px;border-radius:16px;border-top:4px solid #84C9BD;box-shadow:0 4px 12px rgba(26, 52, 49, 0.1);height:100%;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
                                             <div style="margin-bottom:12px;line-height:1;">
                                                 <span role="img" aria-label="construction" style="font-size:36px;line-height:1;display:block;color:#1A3431;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;margin:0;padding:0;">🏢</span>
                                             </div>
@@ -172,9 +185,9 @@
                                         <!--[if mso]>
                                         <table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
                                             <tr>
-                                                <td valign="top" height="100%">
+                                                <td valign="top" class="mso-full-height-td">
                                         <![endif]-->
-                                        <div style="background:linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);padding:25px 20px;border-radius:16px;border-top:4px solid #84C9BD;box-shadow:0 4px 12px rgba(26, 52, 49, 0.1);height:100%;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+                                        <div class="card-content-feature-1" style="background:linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);padding:25px 20px;border-radius:16px;border-top:4px solid #84C9BD;box-shadow:0 4px 12px rgba(26, 52, 49, 0.1);height:100%;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
                                             <div style="margin-bottom:12px;line-height:1;">
                                                 <span role="img" aria-label="handshake" style="font-size:36px;line-height:1;display:block;color:#1A3431;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;margin:0;padding:0;">🤝</span>
                                             </div>
@@ -197,9 +210,9 @@
                                         <!--[if mso]>
                                         <table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
                                             <tr>
-                                                <td valign="top" height="100%">
+                                                <td valign="top" class="mso-full-height-td">
                                         <![endif]-->
-                                        <div style="background:linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);padding:25px 20px;border-radius:16px;border-top:4px solid #84C9BD;box-shadow:0 4px 12px rgba(26, 52, 49, 0.1);height:100%;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+                                        <div class="card-content-feature-1" style="background:linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);padding:25px 20px;border-radius:16px;border-top:4px solid #84C9BD;box-shadow:0 4px 12px rgba(26, 52, 49, 0.1);height:100%;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
                                             <div style="margin-bottom:12px;line-height:1;">
                                                 <span role="img" aria-label="people" style="font-size:36px;line-height:1;display:block;color:#1A3431;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;margin:0;padding:0;">👥</span>
                                             </div>
@@ -216,9 +229,9 @@
                                         <!--[if mso]>
                                         <table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
                                             <tr>
-                                                <td valign="top" height="100%">
+                                                <td valign="top" class="mso-full-height-td">
                                         <![endif]-->
-                                        <div style="background:linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);padding:25px 20px;border-radius:16px;border-top:4px solid #84C9BD;box-shadow:0 4px 12px rgba(26, 52, 49, 0.1);height:100%;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+                                        <div class="card-content-feature-1" style="background:linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);padding:25px 20px;border-radius:16px;border-top:4px solid #84C9BD;box-shadow:0 4px 12px rgba(26, 52, 49, 0.1);height:100%;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
                                             <div style="margin-bottom:12px;line-height:1;">
                                                 <span role="img" aria-label="chart" style="font-size:36px;line-height:1;display:block;color:#1A3431;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;margin:0;padding:0;">📈</span>
                                             </div>
@@ -256,63 +269,123 @@
                             <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100%;border:0;">
                                 <tr>
                                     <td width="50%" style="padding:6px;vertical-align:top;" class="mobile-full-width">
-                                        <div style="background-color:#ffffff;padding:25px 20px;border-radius:16px;height:100%;border:2px solid #e8f5f3;box-shadow:0 4px 12px rgba(26, 52, 49, 0.08);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+                                        <!--[if mso]>
+                                        <table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                                            <tr>
+                                                <td valign="top" class="mso-full-height-td">
+                                        <![endif]-->
+                                        <div class="card-content-feature-2" style="background-color:#ffffff;padding:25px 20px;border-radius:16px;height:100%;border:2px solid #e8f5f3;box-shadow:0 4px 12px rgba(26, 52, 49, 0.08);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
                                             <div style="width:48px;background:linear-gradient(135deg, #84C9BD 0%, #6bb5a8 100%);border-radius:14px;text-align:center;margin-bottom:15px;box-shadow:0 4px 12px rgba(132, 201, 189, 0.3);padding:12px 0;">
                                                 <span role="img" aria-label="eye" style="font-size:24px;line-height:1;display:inline-block;vertical-align:middle;color:#1A3431;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;margin:0;padding:0;">👀</span>
                                             </div>
                                             <h3 style="color:#1A3431;font-size:17px;margin:0 0 10px 0;font-weight:700;letter-spacing:-0.2px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;padding:0;">Visibilité & Leads Qualifiés</h3>
                                             <p style="color:#5a6e6c;font-size:13px;margin:0;line-height:1.7;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;padding:0;" class="min-height-adjust">Attirez l'attention avec 11M+ visites et 18M+ vues, et générez des leads ciblés via notre Marketplace et campagnes digitales.</p>
                                         </div>
+                                        <!--[if mso]>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <![endif]-->
                                     </td>
                                     <td width="50%" style="padding:6px;vertical-align:top;" class="mobile-full-width">
-                                        <div style="background-color:#ffffff;padding:25px 20px;border-radius:16px;height:100%;border:2px solid #e8f5f3;box-shadow:0 4px 12px rgba(26, 52, 49, 0.08);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+                                        <!--[if mso]>
+                                        <table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                                            <tr>
+                                                <td valign="top" class="mso-full-height-td">
+                                        <![endif]-->
+                                        <div class="card-content-feature-2" style="background-color:#ffffff;padding:25px 20px;border-radius:16px;height:100%;border:2px solid #e8f5f3;box-shadow:0 4px 12px rgba(26, 52, 49, 0.08);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
                                             <div style="width:48px;background:linear-gradient(135deg, #84C9BD 0%, #6bb5a8 100%);border-radius:14px;text-align:center;margin-bottom:15px;box-shadow:0 4px 12px rgba(132, 201, 189, 0.3);padding:12px 0;">
                                                 <span role="img" aria-label="strength" style="font-size:24px;line-height:1;display:inline-block;vertical-align:middle;color:#1A3431;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;margin:0;padding:0;">💪</span>
                                             </div>
                                             <h3 style="color:#1A3431;font-size:17px;margin:0 0 10px 0;font-weight:700;letter-spacing:-0.2px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;padding:0;">Force de Vente & Réseau</h3>
                                             <p style="color:#5a6e6c;font-size:13px;margin:0;line-height:1.7;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;padding:0;" class="min-height-adjust">Bénéficiez d'une équipe commerciale dédiée et d'un réseau de +700 conseillers activés partout au Maroc.</p>
                                         </div>
+                                        <!--[if mso]>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <![endif]-->
                                     </td>
                                 </tr>
                                 <tr>
                                     <td width="50%" style="padding:6px;vertical-align:top;" class="mobile-full-width">
-                                        <div style="background-color:#ffffff;padding:25px 20px;border-radius:16px;height:100%;border:2px solid #e8f5f3;box-shadow:0 4px 12px rgba(26, 52, 49, 0.08);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+                                        <!--[if mso]>
+                                        <table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                                            <tr>
+                                                <td valign="top" class="mso-full-height-td">
+                                        <![endif]-->
+                                        <div class="card-content-feature-2" style="background-color:#ffffff;padding:25px 20px;border-radius:16px;height:100%;border:2px solid #e8f5f3;box-shadow:0 4px 12px rgba(26, 52, 49, 0.08);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
                                             <div style="width:48px;background:linear-gradient(135deg, #84C9BD 0%, #6bb5a8 100%);border-radius:14px;text-align:center;margin-bottom:15px;box-shadow:0 4px 12px rgba(132, 201, 189, 0.3);padding:12px 0;">
                                                 <span role="img" aria-label="cart" style="font-size:24px;line-height:1;display:inline-block;vertical-align:middle;color:#1A3431;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;margin:0;padding:0;">🛒</span>
                                             </div>
                                             <h3 style="color:#1A3431;font-size:17px;margin:0 0 10px 0;font-weight:700;letter-spacing:-0.2px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;padding:0;">Marketplace Transactionnelle</h3>
                                             <p style="color:#5a6e6c;font-size:13px;margin:0;line-height:1.7;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;padding:0;" class="min-height-adjust">Accédez à 42 000+ acheteurs potentiels et vendez directement sur notre plateforme performante.</p>
                                         </div>
+                                        <!--[if mso]>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <![endif]-->
                                     </td>
                                     <td width="50%" style="padding:6px;vertical-align:top;" class="mobile-full-width">
-                                        <div style="background-color:#ffffff;padding:25px 20px;border-radius:16px;height:100%;border:2px solid #e8f5f3;box-shadow:0 4px 12px rgba(26, 52, 49, 0.08);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+                                        <!--[if mso]>
+                                        <table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                                            <tr>
+                                                <td valign="top" class="mso-full-height-td">
+                                        <![endif]-->
+                                        <div class="card-content-feature-2" style="background-color:#ffffff;padding:25px 20px;border-radius:16px;height:100%;border:2px solid #e8f5f3;box-shadow:0 4px 12px rgba(26, 52, 49, 0.08);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
                                             <div style="width:48px;background:linear-gradient(135deg, #84C9BD 0%, #6bb5a8 100%);border-radius:14px;text-align:center;margin-bottom:15px;box-shadow:0 4px 12px rgba(132, 201, 189, 0.3);padding:12px 0;">
                                                 <span role="img" aria-label="phone" style="font-size:24px;line-height:1;display:inline-block;vertical-align:middle;color:#1A3431;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;margin:0;padding:0;">📞</span>
                                             </div>
                                             <h3 style="color:#1A3431;font-size:17px;margin:0 0 10px 0;font-weight:700;letter-spacing:-0.2px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;padding:0;">Gestion et Suivi Client</h3>
                                             <p style="color:#5a6e6c;font-size:13px;margin:0;line-height:1.7;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;padding:0;" class="min-height-adjust">Profitez d'un centre de relation client pour un suivi efficace et une gestion simplifiée de vos ventes.</p>
                                         </div>
+                                        <!--[if mso]>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <![endif]-->
                                     </td>
                                 </tr>
                                 <!-- NEW BLOCKS START HERE -->
                                 <tr>
                                     <td width="50%" style="padding:6px;vertical-align:top;" class="mobile-full-width">
-                                        <div style="background-color:#ffffff;padding:25px 20px;border-radius:16px;height:100%;border:2px solid #e8f5f3;box-shadow:0 4px 12px rgba(26, 52, 49, 0.08);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+                                        <!--[if mso]>
+                                        <table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                                            <tr>
+                                                <td valign="top" class="mso-full-height-td">
+                                        <![endif]-->
+                                        <div class="card-content-feature-2" style="background-color:#ffffff;padding:25px 20px;border-radius:16px;height:100%;border:2px solid #e8f5f3;box-shadow:0 4px 12px rgba(26, 52, 49, 0.08);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
                                             <div style="width:48px;background:linear-gradient(135deg, #84C9BD 0%, #6bb5a8 100%);border-radius:14px;text-align:center;margin-bottom:15px;box-shadow:0 4px 12px rgba(132, 201, 189, 0.3);padding:12px 0;">
                                                 <span role="img" aria-label="chart" style="font-size:24px;line-height:1;display:inline-block;vertical-align:middle;color:#1A3431;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;margin:0;padding:0;">📊</span>
                                             </div>
                                             <h3 style="color:#1A3431;font-size:17px;margin:0 0 10px 0;font-weight:700;letter-spacing:-0.2px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;padding:0;">Data Immobilières Nationales</h3>
                                             <p style="color:#5a6e6c;font-size:13px;margin:0;line-height:1.7;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;padding:0;" class="min-height-adjust">Seul acteur privé au Maroc à disposer de données immobilières fiables à l’échelle nationale grâce à un partenariat exclusif avec le CNONM. AVM le plus performant du marché, construit avec des experts RICS et références mondiales de l’évaluation immobilière.</p>
                                         </div>
+                                        <!--[if mso]>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <![endif]-->
                                     </td>
                                     <td width="50%" style="padding:6px;vertical-align:top;" class="mobile-full-width">
-                                        <div style="background-color:#ffffff;padding:25px 20px;border-radius:16px;height:100%;border:2px solid #e8f5f3;box-shadow:0 4px 12px rgba(26, 52, 49, 0.08);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+                                        <!--[if mso]>
+                                        <table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                                            <tr>
+                                                <td valign="top" class="mso-full-height-td">
+                                        <![endif]-->
+                                        <div class="card-content-feature-2" style="background-color:#ffffff;padding:25px 20px;border-radius:16px;height:100%;border:2px solid #e8f5f3;box-shadow:0 4px 12px rgba(26, 52, 49, 0.08);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
                                             <div style="width:48px;background:linear-gradient(135deg, #84C9BD 0%, #6bb5a8 100%);border-radius:14px;text-align:center;margin-bottom:15px;box-shadow:0 4px 12px rgba(132, 201, 189, 0.3);padding:12px 0;">
                                                 <span role="img" aria-label="robot" style="font-size:24px;line-height:1;display:inline-block;vertical-align:middle;color:#1A3431;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;margin:0;padding:0;">🤖</span>
                                             </div>
                                             <h3 style="color:#1A3431;font-size:17px;margin:0 0 10px 0;font-weight:700;letter-spacing:-0.2px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;padding:0;">Technologie & IA</h3>
                                             <p style="color:#5a6e6c;font-size:13px;margin:0;line-height:1.7;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;padding:0;" class="min-height-adjust">Automatisation de la réalisation des études de marché. Amélioration continue de la qualité des AVM, grâce à l’IA et à la supervision humaine par des experts métiers RICS.</p>
                                         </div>
+                                        <!--[if mso]>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <![endif]-->
                                     </td>
                                 </tr>
                                 <!-- NEW BLOCKS END HERE -->
