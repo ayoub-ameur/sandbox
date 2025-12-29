@@ -1,13 +1,3 @@
-To ensure all six feature blocks under the "Prêts à vendre plus vite ?" section have the same height on desktop across various email clients (including Outlook MSO and modern clients), we need to apply a consistent `min-height` to their containing `div` elements. This `min-height` should be sufficient to accommodate the tallest content block.
-
-Based on an analysis of the content, particularly the new "Data Immobilières Nationales" block which is the longest, a `min-height` of approximately 350px is appropriate.
-
-Here are the changes made:
-
-1.  **Updated MSO conditional styles**: The `min-height` for `.card-content-feature-2` within the `<!--[if mso]>` block was increased from `330px` to `350px`. This ensures Outlook desktop clients apply this minimum height.
-2.  **Added `min-height` to inline styles**: For each of the six `div` elements with the class `card-content-feature-2`, `min-height:350px;` was added to their inline `style` attribute. This ensures modern desktop email clients also respect this minimum height.
-3.  **Mobile responsiveness**: The existing media query `@media screen and (max-width: 600px)` already sets `.card-content-feature-2 { min-height: auto !important; }`, which correctly allows the cards to adjust their height and stack naturally on mobile. This behavior is preserved.
-
 ```html
 <!DOCTYPE html>
 <html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
