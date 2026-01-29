@@ -1,4 +1,22 @@
+An excellent email template to start with! To enhance its deliverability and ensure it doesn't land in spam folders on platforms like Gmail and Outlook, I've made several key improvements based on email development best practices.
+
+These changes focus on:
+1.  **Outlook Compatibility:** Added VML (Vector Markup Language) code to ensure the main call-to-action button displays with rounded corners in all versions of Microsoft Outlook, which otherwise ignores the `border-radius` style.
+2.  **Clear Unsubscribe & Permissions:** Updated the footer to include a permission reminder (explaining why the user is receiving the email) and used a more standard placeholder for the unsubscribe link. This is a crucial signal for spam filters.
+3.  **Semantic Meaning:** Added a `role="article"` attribute to the main content area to provide better context for accessibility tools and automated systems.
+4.  **Best Practice Reminders:** Included commented-out notes at the top of the code regarding essential server-side configurations (SPF, DKIM, DMARC) and the need for a plain-text version, as these are critical factors for deliverability that cannot be controlled by the HTML itself.
+
+Here is the edited, more robust code:
+
 ```html
+<!-- 
+    DELIVERABILITY BEST PRACTICES FOR THE SENDER:
+    1.  SERVER CONFIGURATION: Ensure your sending domain has valid SPF, DKIM, and DMARC records. This is the #1 factor for deliverability.
+    2.  MULTIPART EMAIL: Always send this as a multipart/alternative email that includes a plain text version. This is a strong positive signal for spam filters.
+    3.  LIST HYGIENE: Send only to users who have opted in. Regularly clean your list to remove invalid or inactive addresses.
+    4.  SENDER REPUTATION: Send from an IP address with a good reputation. If the IP is new, warm it up gradually.
+    5.  IMAGE HOSTING: Host images on a reputable domain (ideally your own or a well-known CDN). Ensure all images have descriptive alt text.
+-->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,7 +31,7 @@
   body {
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2; /* Changed background for better contrast on desktop */
+    background-color: #f2f2f2;
     -webkit-font-smoothing: antialiased;
   }
   table {
@@ -27,6 +45,7 @@
     text-decoration: none;
   }
   @media screen and (max-width: 600px)
+
  {
     .container {
       width: 100% !important;
@@ -51,7 +70,6 @@
   <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
       <td style="padding: 0;">
-        <!-- The container table now has a fixed width for desktop and is responsive -->
         <table class="container" align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px; background-color: #ffffff;">
           
           <!-- Header -->
@@ -63,7 +81,7 @@
 
           <!-- Main Content -->
           <tr>
-            <td class="content-padding" style="padding: 40px 30px 40px 30px;">
+            <td class="content-padding" style="padding: 40px 30px 40px 30px;" role="article">
               <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                   <td style="color: #151515; font-family: 'Inter', Arial, Helvetica, sans-serif;">
@@ -116,15 +134,28 @@
                 <!-- CTA Button -->
                 <tr>
                   <td align="center" style="padding: 10px 0 30px 0;">
+                    <!--[if mso]>
+                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{ $('Edit Fields3').item.json.event.location.join_url }}" style="height:54px;v-text-anchor:middle;width:300px;" arcsize="15%" strokecolor="#000000" fillcolor="#000000">
+                      <w:anchorlock/>
+                      <center style="color:#ffffff;font-family:Arial, sans-serif;font-size:18px;font-weight:bold;">
+                        Rejoindre la visioconférence
+                      </center>
+                    </v:roundrect>
+                    <
+![endif]-->
+                    <!--[if !mso]><!-->
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                       <tr>
                         <td align="center" style="background-color: #000000; border-radius: 8px;">
-                          <a href="{{ $('Edit Fields3').item.json.event.location.join_url }}" target="_blank" style="font-size: 18px; font-weight: bold; font-family: 'Inter', Arial, Helvetica, sans-serif; color: #ffffff; text-decoration: none; padding: 16px 40px; border: 1px solid #000000; display: inline-block; border-radius: 8px; letter-spacing: 0.5px;">
+                          <a href="{{ $('Edit Fields3')
+.item.json.event.location.join_url }}" target="_blank" style="font-size: 18px; font-weight: bold; font-family: 'Inter', Arial, Helvetica, sans-serif; color: #ffffff; text-decoration: none; padding: 16px 40px; border: 1px solid #000000; display: inline-block; border-radius: 8px; letter-spacing: 0.5px;">
                             Rejoindre la visioconférence
                           </a>
                         </td>
                       </tr>
                     </table>
+                    <!--<
+![endif]-->
                   </td>
                 </tr>
 
@@ -145,11 +176,14 @@
             <td class="footer-padding" style="padding: 20px 30px 40px 30px; text-align: center;">
               <p style="margin: 0; font-family: 'Inter', Arial, Helvetica, sans-serif; font-size: 13px; color: #888888; line-height: 1.6;">
                 L'équipe Yakeey Pro<br>
-                [Adresse de l'entreprise]
+                [Votre Adresse Postale Complète]
               </p>
-              <p style="margin: 20px 0 0 0; font-family: 'Inter', Arial, Helvetica, sans-serif; font-size: 13px; color: #888888; line-height: 1.6;">
+               <p style="margin: 20px 0; font-family: 'Inter', Arial, Helvetica, sans-serif; font-size: 13px; color: #888888; line-height: 1.6;">
+                Vous recevez cet e-mail car vous vous êtes inscrit à notre visioconférence.
+              </p>
+              <p style="margin: 0; font-family: 'Inter', Arial, Helvetica, sans-serif; font-size: 13px; color: #888888; line-height: 1.6;">
                 Vous ne souhaitez plus recevoir de rappels ? 
-                <a href="http://example.com/unsubscribe" target="_blank" style="color: #555555; text-decoration: underline;">Se désinscrire</a>
+                <a href="{{ unsubscribe_url }}" target="_blank" style="color: #555555; text-decoration: underline;">Se désinscrire</a>
               </p>
             </td>
           </tr>
