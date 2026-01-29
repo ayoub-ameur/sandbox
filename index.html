@@ -1,22 +1,3 @@
-An excellent email template to start with! To enhance its deliverability and ensure it doesn't land in spam folders on platforms like Gmail and Outlook, I've made several key improvements based on email development best practices.
-
-These changes focus on:
-1.  **Outlook Compatibility:** Added VML (Vector Markup Language) code to ensure the main call-to-action button displays with rounded corners in all versions of Microsoft Outlook, which otherwise ignores the `border-radius` style.
-2.  **Clear Unsubscribe & Permissions:** Updated the footer to include a permission reminder (explaining why the user is receiving the email) and used a more standard placeholder for the unsubscribe link. This is a crucial signal for spam filters.
-3.  **Semantic Meaning:** Added a `role="article"` attribute to the main content area to provide better context for accessibility tools and automated systems.
-4.  **Best Practice Reminders:** Included commented-out notes at the top of the code regarding essential server-side configurations (SPF, DKIM, DMARC) and the need for a plain-text version, as these are critical factors for deliverability that cannot be controlled by the HTML itself.
-
-Here is the edited, more robust code:
-
-```html
-<!-- 
-    DELIVERABILITY BEST PRACTICES FOR THE SENDER:
-    1.  SERVER CONFIGURATION: Ensure your sending domain has valid SPF, DKIM, and DMARC records. This is the #1 factor for deliverability.
-    2.  MULTIPART EMAIL: Always send this as a multipart/alternative email that includes a plain text version. This is a strong positive signal for spam filters.
-    3.  LIST HYGIENE: Send only to users who have opted in. Regularly clean your list to remove invalid or inactive addresses.
-    4.  SENDER REPUTATION: Send from an IP address with a good reputation. If the IP is new, warm it up gradually.
-    5.  IMAGE HOSTING: Host images on a reputable domain (ideally your own or a well-known CDN). Ensure all images have descriptive alt text.
--->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -193,4 +174,3 @@ Here is the edited, more robust code:
   </table>
 </body>
 </html>
-```
